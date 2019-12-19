@@ -1,0 +1,135 @@
+{
+  "name": "nodecg-countdown-lowerthird",
+  "version": "1.0.0",
+  "description": "Generic countdown and lowerthird",
+  "author": {
+    "name": "Dregu",
+    "email": "dregu@dreg.us"
+  },
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "npm run bundle",
+    "postinstall": "npm run build",
+    "bundle": "node script/bundle.js",
+    "build": "set NODE_ENV=production && npm run bundle"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "nodecg"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.5.0",
+    "dashboardPanels": [
+      {
+        "name": "timer",
+        "title": "Countdown",
+        "width": 2,
+        "file": "timer-ctrl.html",
+        "headerColor": "#525F78",
+        "workspace": ""
+      },
+      {
+        "name": "lower-third-ctrl",
+        "title": "Main Control",
+        "width": 2,
+        "file": "lower-third-ctrl.html",
+        "headerColor": "#525F78",
+        "workspace": "Lower Third"
+      },
+      {
+        "name": "staff-ctrl",
+        "title": "Staff List",
+        "width": 3,
+        "file": "staff-ctrl.html",
+        "headerColor": "#525F78",
+        "workspace": "Lower Third"
+      },
+      {
+        "name": "caster-ctrl",
+        "title": "Casters",
+        "width": 3,
+        "file": "caster-ctrl.html",
+        "headerColor": "#525F78",
+        "workspace": "Lower Third"
+      },
+      {
+        "name": "desk-ctrl",
+        "title": "Desk",
+        "width": 3,
+        "file": "desk-ctrl.html",
+        "headerColor": "#525F78",
+        "workspace": "Lower Third"
+      },
+      {
+        "name": "timer-dialog",
+        "title": "Set Timer",
+        "width": 4,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "set",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "timer-dialog.html"
+      },
+      {
+        "name": "timer-dialog-exact",
+        "title": "Set Timer",
+        "width": 4,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "set",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "timer-dialog-exact.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "timer.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "lower-third.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@chenfengyuan/vue-number-input": "^0.5.2",
+    "clone": "^2.1.2",
+    "gsap": "^2.0.2",
+    "nanotimer": "^0.3.15",
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.0",
+    "vue-select": "^2.5.1",
+    "vuetify": "^1.3.8"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
+    "eslint": "^5.4.0",
+    "parcel-bundler": "^1.9.7",
+    "sass": "^1.14.3",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
